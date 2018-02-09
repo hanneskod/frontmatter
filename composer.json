@@ -1,0 +1,32 @@
+{
+    "name": "hkod/frontmatter",
+    "description": "Dynamic and context aware frontmatter parser",
+    "keywords": ["frontmatter", "metadata"],
+    "homepage": "https://github.com/hanneskod/frontmatter",
+    "type": "library",
+    "license": "Unlicense",
+    "authors": [
+        {
+            "name": "Hannes Forsgård",
+            "email": "hannes.forsgard@fripost.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "hkod\\frontmatter\\": ["src/"]
+        }
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "symfony/yaml": "^4",
+        "erusev/parsedown": "^1",
+        "mustache/mustache": "^2"
+    },
+    "suggest": {
+        "symfony/yaml": "For parsing YAML",
+        "erusev/parsedown": "For parsing Markdown",
+        "mustache/mustache": "For parsing Mustache templates"
+    }
+}

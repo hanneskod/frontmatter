@@ -1,0 +1,4 @@
+suites:
+    giroapp_suite:
+        namespace: hkod\frontmatter
+        psr4_prefix: hkod\frontmatter
