@@ -30,7 +30,7 @@ class ParserSpec extends ObjectBehavior
 
         $this->beConstructedWith($concat, $concat, $blockParser);
 
-        $blockParser->parse('foobar', 'baz')->willReturn($result);
+        $blockParser->parse('foobar')->willReturn($result);
         $result->getFrontmatter()->willReturn('foo');
         $result->getBody()->willReturn('bar');
 

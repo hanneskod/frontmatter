@@ -36,7 +36,7 @@ class Parser
 
     public function parse(string $source, $context = null): Result
     {
-        $blocks = $this->blockParser->parse($source, $context);
+        $blocks = $this->blockParser->parse($source);
 
         return new Result(
             ($this->frontmatterParser)($blocks->getFrontmatter(), $context),
