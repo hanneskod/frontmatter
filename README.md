@@ -1,15 +1,27 @@
 # frontmatter
 
-A context aware frontmatter parser that supports multiple formats.
+[![Packagist Version](https://img.shields.io/packagist/v/hanneskod/frontmatter.svg?style=flat-square)](https://packagist.org/packages/hanneskod/frontmatter)
+[![Build Status](https://img.shields.io/travis/hanneskod/frontmatter/master.svg?style=flat-square)](https://travis-ci.org/hanneskod/frontmatter)
+
+A context aware frontmatter parser that supports multiple formats and uses a clean
+OOP architecture.
 
 * Json
 * YAML (`require symfony/yaml`)
 * Markdown (`require erusev/parsedown`)
 * Mustache (`require mustache/mustache`)
 
-Parser are simple callables, super easy to add more formats.
+Parsers are simple callables, super easy to add more formats.
 
-A standard parser with yaml frontmatter and markdown body.
+## Installation
+
+```shell
+composer require hkod/frontmatter:^1.0
+```
+
+## Usage
+
+A standard parser with yaml frontmatter and markdown body:
 
 <!-- @expectOutput /value/ -->
 <!-- @expectOutput /template/ -->
@@ -33,6 +45,8 @@ echo $result->getFrontmatter()['key'];
 // <p>This is a <strong>template</strong></p>
 echo $result->getBody();
 ```
+
+### Creating complex parsers
 
 Includes interface for creating complex parsers.
 
