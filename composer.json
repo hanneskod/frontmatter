@@ -20,7 +20,7 @@
         "php": ">=7.0"
     },
     "require-dev": {
-        "symfony/yaml": "^4",
+        "symfony/yaml": ">=3, <5",
         "erusev/parsedown": "^1",
         "mustache/mustache": "^2"
     },
