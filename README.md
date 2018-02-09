@@ -1,6 +1,6 @@
 # frontmatter
 
-[![Packagist Version](https://img.shields.io/packagist/v/hanneskod/frontmatter.svg?style=flat-square)](https://packagist.org/packages/hanneskod/frontmatter)
+[![Packagist Version](https://img.shields.io/packagist/v/hkod/frontmatter.svg?style=flat-square)](https://packagist.org/packages/hkod/frontmatter)
 [![Build Status](https://img.shields.io/travis/hanneskod/frontmatter/master.svg?style=flat-square)](https://travis-ci.org/hanneskod/frontmatter)
 
 A context aware frontmatter parser that supports multiple formats and uses a clean
