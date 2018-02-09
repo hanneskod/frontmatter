@@ -48,8 +48,6 @@ echo $result->getBody();
 
 ### Creating complex parsers
 
-Includes interface for creating complex parsers.
-
 <!-- @expectOutput /value/ -->
 <!-- @expectOutput /markdown/ -->
 <!-- @expectOutput /strong/ -->

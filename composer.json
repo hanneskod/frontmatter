@@ -1,6 +1,6 @@
 {
     "name": "hkod/frontmatter",
-    "description": "Dynamic and context aware frontmatter parser",
+    "description": "A context aware frontmatter parser that supports multiple formats and uses a clean OOP architecture",
     "keywords": ["frontmatter", "metadata"],
     "homepage": "https://github.com/hanneskod/frontmatter",
     "type": "library",
