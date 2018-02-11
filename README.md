@@ -6,6 +6,8 @@
 A context aware frontmatter parser that supports multiple formats and uses a clean
 OOP architecture.
 
+Supported formats:
+
 * Json
 * INI
 * YAML (`require symfony/yaml`)
@@ -17,7 +19,7 @@ Parsers are simple callables, super easy to add more formats.
 ## Installation
 
 ```shell
-composer require hkod/frontmatter:^1.0
+composer require hkod/frontmatter:^1
 ```
 
 ## Usage
