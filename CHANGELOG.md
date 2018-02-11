@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - InvertedBlockParser
+- IniParser
 
 ## [1.0.0] - 2018-02-09
 - Initial release

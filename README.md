@@ -7,6 +7,7 @@ A context aware frontmatter parser that supports multiple formats and uses a cle
 OOP architecture.
 
 * Json
+* INI
 * YAML (`require symfony/yaml`)
 * Markdown (`require erusev/parsedown`)
 * Mustache (`require mustache/mustache`)
