@@ -34,7 +34,6 @@ A standard parser with yaml frontmatter and markdown body:
 <!-- @expectOutput /template/ -->
 <!-- @expectOutput /strong/ -->
 ```php
-
 $parser = new \hkod\frontmatter\Parser(
     new \hkod\frontmatter\YamlParser,
     new \hkod\frontmatter\MarkdownParser
@@ -55,13 +54,12 @@ echo $result->getBody();
 
 ### Specify the front matter delimiter
 
-You may set the delimiters when creating the block parser.
+> Note that the delimiting tokens always represents full lines.
 
-> Note that since the delimiting tokens always represents full lines.
+You may set the delimiters when creating the block parser.
 
 <!-- @expectOutput /frontmatter/ -->
 ```php
-
 $parser = new \hkod\frontmatter\Parser(
     new \hkod\frontmatter\VoidParser,
     new \hkod\frontmatter\VoidParser,
@@ -80,15 +78,14 @@ echo $result->getFrontmatter();
 
 ### Putting the frontmatter last
 
-*Frontmatter* also supports an inverted block parser, where the frontmatter is
-expected to bee last instead of first.
-
 > Note that since the delimiting tokens represent a line the last line must end
 > whit a new line (or similar) or it won't be recognized by the parser.
 
+*Frontmatter* also supports an inverted block parser, where the frontmatter is
+expected to bee last instead of first.
+
 <!-- @expectOutput "This is the frontmatter" -->
 ```php
-
 $parser = new \hkod\frontmatter\Parser(
     new \hkod\frontmatter\VoidParser,
     new \hkod\frontmatter\VoidParser,
@@ -109,12 +106,11 @@ echo $result->getFrontmatter();
 ### Passing a context
 
 When parsing you may pass a context to the parser and it will in turn be passed
-along to all subsequent parsers. Centext dependet parsers may for example expand
-templats.
+along to all subsequent parsers. Context dependet parsers may for example expand
+templates...
 
 <!-- @expectOutput "foobar" -->
 ```php
-
 $parser = new \hkod\frontmatter\Parser(
     new \hkod\frontmatter\VoidParser,
     new \hkod\frontmatter\MustacheParser
@@ -134,7 +130,6 @@ echo $result->getBody();
 <!-- @expectOutput /markdown/ -->
 <!-- @expectOutput /strong/ -->
 ```php
-
 $parser = (new \hkod\frontmatter\ParserBuilder)
     ->addFrontmatterPass(new \hkod\frontmatter\MustacheParser)
     ->addFrontmatterPass(new \hkod\frontmatter\YamlParser)
