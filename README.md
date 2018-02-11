@@ -6,6 +6,10 @@
 A context aware frontmatter parser that supports multiple formats and uses a clean
 OOP architecture.
 
+Front matter is metadata located at the top of a file wrapped in delimiting
+line tokens, usually `---`. The front matter may be formatted using YAML, Json
+or any ohter simliar format such as NEON or TOML.
+
 Supported formats:
 
 * Json
@@ -49,10 +53,38 @@ echo $result->getFrontmatter()['key'];
 echo $result->getBody();
 ```
 
+### Specify the front matter delimiter
+
+You may set the delimiters when creating the block parser.
+
+> Note that since the delimiting tokens always represents full lines.
+
+<!-- @expectOutput /frontmatter/ -->
+```php
+
+$parser = new \hkod\frontmatter\Parser(
+    new \hkod\frontmatter\VoidParser,
+    new \hkod\frontmatter\VoidParser,
+    new \hkod\frontmatter\BlockParser('***', '***')
+);
+
+$result = $parser->parse("***
+frontmatter
+***
+body
+");
+
+// frontmatter
+echo $result->getFrontmatter();
+```
+
 ### Putting the frontmatter last
 
 *Frontmatter* also supports an inverted block parser, where the frontmatter is
 expected to bee last instead of first.
+
+> Note that since the delimiting tokens represent a line the last line must end
+> whit a new line (or similar) or it won't be recognized by the parser.
 
 <!-- @expectOutput "This is the frontmatter" -->
 ```php
@@ -72,6 +104,28 @@ This is the frontmatter
 
 // "This is the frontmatter"
 echo $result->getFrontmatter();
+```
+
+### Passing a context
+
+When parsing you may pass a context to the parser and it will in turn be passed
+along to all subsequent parsers. Centext dependet parsers may for example expand
+templats.
+
+<!-- @expectOutput "foobar" -->
+```php
+
+$parser = new \hkod\frontmatter\Parser(
+    new \hkod\frontmatter\VoidParser,
+    new \hkod\frontmatter\MustacheParser
+);
+
+$context = ['variable' => 'foobar'];
+
+$result = $parser->parse("{{variable}}", $context);
+
+// foobar
+echo $result->getBody();
 ```
 
 ### Creating complex parsers
