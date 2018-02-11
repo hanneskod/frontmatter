@@ -1,7 +1,7 @@
 {
     "name": "hkod/frontmatter",
     "description": "A context aware frontmatter parser that supports multiple formats and uses a clean OOP architecture",
-    "keywords": ["frontmatter", "metadata"],
+    "keywords": ["frontmatter", "metadata", "yaml", "markdown", "json", "mustache", "ini"],
     "homepage": "https://github.com/hanneskod/frontmatter",
     "type": "library",
     "license": "Unlicense",
