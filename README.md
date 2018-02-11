@@ -46,6 +46,31 @@ echo $result->getFrontmatter()['key'];
 echo $result->getBody();
 ```
 
+### Putting the frontmatter last
+
+*Frontmatter* also supports an inverted block parser, where the frontmatter is
+expected to bee last instead of first.
+
+<!-- @expectOutput "This is the frontmatter" -->
+```php
+
+$parser = new \hkod\frontmatter\Parser(
+    new \hkod\frontmatter\VoidParser,
+    new \hkod\frontmatter\VoidParser,
+    new \hkod\frontmatter\InvertedBlockParser
+);
+
+$result = $parser->parse("
+This is a the body
+---
+This is the frontmatter
+---
+");
+
+// "This is the frontmatter"
+echo $result->getFrontmatter();
+```
+
 ### Creating complex parsers
 
 <!-- @expectOutput /value/ -->
