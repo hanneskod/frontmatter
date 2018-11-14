@@ -10,7 +10,7 @@ php:
 
 install:
   - composer install
-  - composer global require phpspec/phpspec:^4 hanneskod/readme-tester:1.0-beta.3
+  - composer global require phpspec/phpspec hanneskod/readme-tester:1.0-beta.3
   - export PATH=$PATH:$HOME/.composer/vendor/bin/
 
 script:
