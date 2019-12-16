@@ -17,10 +17,10 @@
         }
     },
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.1"
     },
     "require-dev": {
-        "symfony/yaml": ">=3, <5",
+        "symfony/yaml": "^4",
         "erusev/parsedown": "^1",
         "mustache/mustache": "^2"
     },
