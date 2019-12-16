@@ -11,9 +11,11 @@ php:
 
 install:
   - composer install
+  - wget -O phive.phar "https://phar.io/releases/phive.phar"
+  - php phive.phar install phpspec/phpspec --force-accept-unsigned
   - composer global require phpspec/phpspec hanneskod/readme-tester:1.0-beta.3
   - export PATH=$PATH:$HOME/.config/composer/vendor/bin/
 
 script:
-  - phpspec run --verbose
+  - tools/phpspec run --verbose
   - readme-tester test README.md
