@@ -23,7 +23,7 @@ Parsers are simple callables, super easy to add more formats.
 ## Installation
 
 ```shell
-composer require hkod/frontmatter:^1
+composer require hkod/frontmatter
 ```
 
 ## Usage
